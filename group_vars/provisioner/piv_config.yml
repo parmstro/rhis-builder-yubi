@@ -1,0 +1,16 @@
+---
+# Settings for PIV Application configuration
+
+piv_generate_random_key: true
+piv_mgmt_key_algorithm: "AES256"
+piv_mgmt_key_protect: false
+piv_mgmt_key_pin: "{{ piv_mgmt_pin_vault }}"
+piv_secure_dir: "{{ piv_secure_dir_vault }}"
+piv_FIPS_enabled: false
+piv_pinpuk_default_retries: 5
+piv_pin_retries: "{{ piv_pinpuk_default_retries }}"
+piv_puk_retries: "{{ piv_pinpuk_default_retries }}"
+
+
+piv_certificate_profile: "caRSAUserCertSmartCard"
+piv_RSA_private_key_size: 4096

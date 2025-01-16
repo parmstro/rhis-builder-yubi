@@ -1,0 +1,10 @@
+---
+- name: "Gather the yubikey core facts"
+  ansible.builtin.include_tasks: "piv_gather_yubikey_facts.yml"
+
+- name: "Generate a new piv management key, pin and puk"
+  ansible.builtin.include_tasks: "piv_key_pin_puk.yml"
+
+- name: "Generate Cardholder info"
+  ansible.builtin.include_tasks: "piv_generate_ch_cfg.yml"
+
