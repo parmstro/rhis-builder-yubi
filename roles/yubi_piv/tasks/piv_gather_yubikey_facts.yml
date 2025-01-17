@@ -1,7 +1,7 @@
 ---
 - name: "Ensure the secure directory exists"
   ansible.builtin.file:
-    path: "{{ piv_secure_dir }}"
+    path: "{{ piv_tmp_secure_dir }}"
     state: directory
     owner: root
     group: root
