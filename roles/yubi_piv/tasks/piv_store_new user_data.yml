@@ -60,3 +60,6 @@
 
 - name: "Delete the working directory information"
   ansible.builtin.command: "rm -rf {{ piv_tmp_secure_dir }}"
+
+- name: "Share the initial configuration with the provisioned "idm_user"
+  ansible.builtin.include_tasks: "piv_vault_user_data.yml"
