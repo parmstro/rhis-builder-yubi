@@ -17,15 +17,15 @@
 - name: "Import Certificate to key"
   ansible.builtin.include_tasks: "piv_import_certs_to_yubikey.yml"
 
+- name: "Enable user authtype: PKINIT"
+  ansible.builtin.include_tasks: "piv_enable_user_authtype_pkinit.yml"
+
 - name: "Validate Yubikey PIV configuration"
   ansible.builtin.include_tasks: "piv_validate_yubikey_config.yml"
-
-- name: "Create IdM vault"
-  when: piv_secure_idm_store
-  ansible.builtin.include_tasks: "piv_create_idm_vault.yml"  
 
 - name: "Gather the new PIV application facts"
   ansible.builtin.include_tasks: "piv_gather_pivapp_facts.yml"
 
 - name: "Store new user data"
   ansible.builtin.include_tasks: "piv_store_new user_data.yml"
+
