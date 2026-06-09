@@ -1,2 +1,4 @@
 parmstro.yml
 *.code-workspace
+.vscode/
+.claude/
